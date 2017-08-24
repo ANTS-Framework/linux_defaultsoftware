@@ -1,0 +1,13 @@
+---
+  - name: Installing default software on yum systems
+    yum:
+        name: "{{ linux_defaultsoftware__yum_defaultsoftware }}"
+        state: present
+    when: ansible_pkg_mgr == yum
+
+  - name: Installing default software on apt systems
+    yum:
+        name: "{{ item }}"
+        state: present
+    with_items: "{{ linux_defaultsoftware__apt_defaultsoftware }}"
+    when: ansible_pkg_mgr == apt

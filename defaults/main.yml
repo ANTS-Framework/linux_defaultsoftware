@@ -1,0 +1,5 @@
+---
+    linux_defaultsoftware__yum_defaultsoftware:
+        - vim
+    linux_defaultsoftware__apt_defaultsoftware:
+        - vim
